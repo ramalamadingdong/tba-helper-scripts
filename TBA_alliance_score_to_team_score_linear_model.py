@@ -36,10 +36,10 @@ for match in matches:
 
     for t in match['alliances']['red']['team_keys']:
         row[f't_{t}'] = 1
-    row['autoCoralPoints']    = match['score_breakdown']['blue']['autoCoralPoints']
-    row['netAlgaeCount']      = match['score_breakdown']['blue']['netAlgaeCount']
-    row['teleopCoralPoints']  = match['score_breakdown']['blue']['teleopCoralPoints']
-    row['endGameBargePoints'] = match['score_breakdown']['blue']['endGameBargePoints']
+    row['autoCoralPoints']    = match['score_breakdown']['red']['autoCoralPoints']
+    row['netAlgaeCount']      = match['score_breakdown']['red']['netAlgaeCount']
+    row['teleopCoralPoints']  = match['score_breakdown']['red']['teleopCoralPoints']
+    row['endGameBargePoints'] = match['score_breakdown']['red']['endGameBargePoints']
     rows.append(row)
 
 df = pd.DataFrame(rows)
