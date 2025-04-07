@@ -1,11 +1,13 @@
 import tbapy
 from datetime import datetime
 import pandas as pd
-import gspread as gc
+import gspread
 import keys
 import time
 
 tba = tbapy.TBA(keys.tba)
+
+gc = gspread.service_account(filename="secrets.json")
 
 current_dateTime = datetime.now()
 matches = tba.team_matches(581, year=2025)
@@ -35,7 +37,7 @@ for x in range (3, 51):
             print(KeyError)
             None
     i = 0
-    events = tba.team_events(int(team_number), 2024)
+    events = tba.team_events(int(team_number), 2025)
     wins = 0
     matches = 0
     for event in events:

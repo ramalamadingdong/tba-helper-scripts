@@ -2,3 +2,4 @@ tbapy
 pandas
 numpy
 scikit-learn
+gspread
